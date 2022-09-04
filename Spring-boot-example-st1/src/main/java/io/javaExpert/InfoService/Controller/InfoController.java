@@ -1,0 +1,53 @@
+package io.javaExpert.InfoService.Controller;
+
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.google.common.base.Optional;
+
+import io.javaExpert.InfoService.Model.Info;
+import io.javaExpert.InfoService.Repository.InfoRepository;
+
+@RestController
+@RequestMapping("/api")
+public class InfoController {
+
+	@Autowired
+	private InfoRepository movieRep;
+
+	@Async
+	@GetMapping(value = "/movieInfo")
+	public CompletableFuture<List<Info>> getAllMovie() {
+		List<Info> InfoList = movieRep.findAll();
+
+		return CompletableFuture.completedFuture(InfoList);
+	}
+
+	
+	@PostMapping(value = "/addMethod")
+	public Info saveMovie(@RequestBody Info info) {
+		return movieRep.save(info);
+	}
+
+	@GetMapping("movieInfo/{id}")
+	public Object findMovieById(@PathVariable("id") Integer id) {
+		return movieRep.findById(id);
+	}
+	
+	
+	
+	/*
+	 * @GetMapping(value="/movieInfo" ) public List<Info> getAllMovie(){ return
+	 * movieRep.findAll(); }
+	 */
+}
