@@ -1,7 +1,6 @@
 
 package com.edayspractice.userInfo.model;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,81 +8,85 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
-	
 @Entity
 @Table(name = "user")
 public class CatalogItems {
 
+	public CatalogItems() {
+	}
 
-	public CatalogItems(){}
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "userId")
+	private Integer userId;
 
-			@Id
-			@GeneratedValue(strategy = GenerationType.AUTO)
-			@Column(name="userId")		
-			private Integer userId;
-			
-			@Column(name="firstName")
-			private String firstName;
+	@Column(name = "firstName")
+	private String firstName;
 
-			@Column(name="lastName")
-			private String lastName;
-			
-			@Column(name="deptId")		
-			private Integer deptId;
-			
-			
-			public CatalogItems(String firstName, String lastName, Integer deptId) {
-				super();
-				this.firstName = firstName;
-				this.lastName = lastName;
-				this.deptId = deptId;
-			}
-			
-			
+	@Column(name = "lastName")
+	private String lastName;
 
-			public Integer getUserId() {
-				return userId;
-			}
+	@Column(name = "email")
+	private String email;
 
-			public void setUserId(Integer userId) {
-				this.userId = userId;
-			}
+	@Column(name = "deptId")
+	private Integer deptId;
+	
+	
 
-			public String getFirstName() {
-				return firstName;
-			}
+	public CatalogItems( String firstName, String lastName, String email, Integer deptId) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.deptId = deptId;
+	}
 
-			public void setFirstName(String firstName) {
-				this.firstName = firstName;
-			}
+	public Integer getUserId() {
+		return userId;
+	}
 
-			public String getLastName() {
-				return lastName;
-			}
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
 
-			public void setLastName(String lastName) {
-				this.lastName = lastName;
-			}
+	public String getFirstName() {
+		return firstName;
+	}
 
-			public Integer getDeptId() {
-				return deptId;
-			}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
-			public void setDeptId(Integer deptId) {
-				this.deptId = deptId;
-			}
+	public String getLastName() {
+		return lastName;
+	}
 
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
+	public String getEmail() {
+		return email;
+	}
 
-			@Override
-			public String toString() {
-				return "CatalogItems [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName
-						+ ", deptId=" + deptId + "]";
-			}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-			
-			
-			
-			
+	public Integer getDeptId() {
+		return deptId;
+	}
+
+	public void setDeptId(Integer deptId) {
+		this.deptId = deptId;
+	}
+
+	@Override
+	public String toString() {
+		return "CatalogItems [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", email="
+				+ email + ", deptId=" + deptId + "]";
+	}
+
+	
 }

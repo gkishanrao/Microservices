@@ -37,6 +37,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @Slf4j
 @RequestMapping("/catalog/")
+@CrossOrigin(origins = "*", maxAge = 36000)
 public class MovieCatalogController {
 
 	org.jboss.logging.Logger log = LoggerFactory.logger(getClass());
@@ -85,7 +86,7 @@ public class MovieCatalogController {
 	
 	  public ResponseTemplateVo getFallBackCatalog(@PathVariable("id") Integer
 	  userId) { return new ResponseTemplateVo(new
-	  CatalogItems("No service is available", "", 0),new Info("No Service","")); }
+	  CatalogItems("User Service is not available", "","", 0),new Info("Deparment Service is not Available","")); }
 	 
 }
 /*

@@ -9,9 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.apache.kafka.common.serialization.Serializer;
+
 @Entity
 @Table(name = "dept")
-public class Info implements Serializable{
+public class Info {
 	
 
 	/**
@@ -65,6 +67,15 @@ public class Info implements Serializable{
 	public void setDeptCode(String deptCode) {
 		DeptCode = deptCode;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "Info [deptId=" + deptId + ", deptName=" + deptName + ", DeptCode=" + DeptCode + "]";
+	}
+
+
 
 
 		

@@ -11,10 +11,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.client.RestTemplate;
 
 
-
+@CrossOrigin(origins = "http://localhost:3000")
 @SpringBootApplication
 @Configuration
 @EnableAutoConfiguration

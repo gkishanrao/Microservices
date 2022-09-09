@@ -19,6 +19,22 @@ class Test {
 
 	// Driver Program to test above function
 	public static void main(String[] args) {
+		
+		
+
+
+String name1="Kishan";
+String name2="Kishan";
+String name3=new String("Hello");
+String name4=new String("Hello");
+
+System.out.println("Test.main()"+(name1.equals(name2)));
+System.out.println("Test.main()"+(name1==name2));
+System.out.println("Test.main()"+(name3==(name4)));
+
+
+		
+		
 
 		// ArrayList<String> nameList=new ArrayList<>();//Remove Elements
 		CopyOnWriteArrayList<String> nameList = new CopyOnWriteArrayList<>();// Add Elements
@@ -131,7 +147,6 @@ System.out.println("========2:"+sortedList2);
 List < Employee > employeesSortedList2 = lt.stream()
     .sorted(Comparator.comparingInt(Employee::getSalary)).collect(Collectors.toList()); //ascending order
 System.out.println(employeesSortedList2);
-
 
 
 
