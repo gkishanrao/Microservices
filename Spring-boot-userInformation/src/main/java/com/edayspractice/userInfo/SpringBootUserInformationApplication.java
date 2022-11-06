@@ -25,13 +25,15 @@ import org.springframework.web.client.RestTemplate;
 @EnableCircuitBreaker
 public class SpringBootUserInformationApplication {
 
+
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootUserInformationApplication.class, args);
 	}
-
+//java developer to be changes
 	@Bean
 	@LoadBalanced
 	public RestTemplate restTemplate() {
+
 		return new RestTemplate();
 	}
 }
