@@ -28,6 +28,7 @@ public class SpringBootUserInformationApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootUserInformationApplication.class, args);
+		System.out.println("UserInformation Application");
 	}
 //java developer to be changes
 	@Bean
