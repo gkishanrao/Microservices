@@ -28,7 +28,10 @@ public class SpringBootUserInformationApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootUserInformationApplication.class, args);
-		//System.out.println("UserInformation Application");
+		String s="Kishan";
+		String s2="Rao";
+		String fullNames =s+ "" +s2;
+		System.out.println("UserInformation Application"+fullNames);
 	}
 //java developer to be changes
 	@Bean
