@@ -148,6 +148,9 @@ List < Employee > employeesSortedList2 = lt.stream()
     .sorted(Comparator.comparingInt(Employee::getSalary)).collect(Collectors.toList()); //ascending order
 System.out.println(employeesSortedList2);
 
+List < Employee > employeesSortedList2 = lt.stream()
+    .sorted(Comparator.comparingInt(Employee::getSalary).reversed()).collect(Collectors.toList()); //decending order
+System.out.println(employeesSortedList2);
 
 
 	}
